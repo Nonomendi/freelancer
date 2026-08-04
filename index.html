@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Freelance Web & Salesforce Developer building high-converting starter websites and modern web apps for South African businesses.">
+    <title>Nolundi Mendi | Web & Salesforce Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0F172A',
+                            navy: '#1E293B',
+                            primary: '#2563EB',
+                            accent: '#0EA5E9',
+                            light: '#F8FAFC'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-light text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- NAVIGATION BAR -->
+    <header class="bg-brand-dark/95 backdrop-blur-md text-white sticky top-0 z-50 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-brand-primary rounded-xl flex items-center justify-center font-heading font-bold text-xl text-white shadow-lg">N</div>
+                <span class="font-heading font-bold text-xl tracking-tight">Nolundi<span class="text-brand-accent">.dev</span></span>
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="index.html" class="text-brand-accent font-semibold">Home</a>
+                <a href="services.html" class="text-slate-300 hover:text-white transition">Services & Packages</a>
+                <a href="contact.html" class="text-slate-300 hover:text-white transition">Contact & Quote</a>
+            </nav>
+
+            <a href="https://wa.me/27820000000?text=Hi%20Nolundi,%20I'm%20interested%20in%20building%20a%20website." target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs px-5 py-2.5 rounded-lg shadow-md tracking-wide uppercase transition flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Me
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- HERO SECTION -->
+        <section class="bg-brand-dark text-white py-20 lg:py-28 px-4 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="inline-block bg-blue-900/50 text-blue-300 border border-blue-700/50 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider">
+                        Freelance Web & Salesforce Developer
+                    </span>
+                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+                        I build fast, high-converting websites for growing businesses.
+                    </h1>
+                    <p class="text-slate-300 text-base sm:text-lg font-light max-w-2xl">
+                        From high-impact local landing pages to multi-page corporate sites and custom Salesforce solutions. Get high quality design and instant WhatsApp lead capture.
+                    </p>
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <a href="contact.html" class="bg-brand-primary hover:bg-blue-600 text-white font-bold px-7 py-3.5 rounded-lg shadow-lg text-sm transition">
+                            Get Instant Quote 🚀
+                        </a>
+                        <a href="https://wa.me/27820000000?text=Hi%20Nolundi,%20I%20have%20a%20project%20question." target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-7 py-3.5 rounded-lg text-sm transition flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Profile Badge -->
+                <div class="lg:col-span-5">
+                    <div class="bg-brand-navy p-8 rounded-2xl border border-slate-700 shadow-2xl relative">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="w-14 h-14 bg-gradient-to-tr from-blue-600 to-sky-400 rounded-full flex items-center justify-center text-white font-bold text-2xl shadow">NM</div>
+                            <div>
+                                <h3 class="font-heading font-bold text-lg text-white">Nolundi Mendi</h3>
+                                <p class="text-xs text-brand-accent">Full-Stack & Salesforce Developer</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3 text-xs text-slate-300 border-t border-slate-800 pt-5">
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-400"><i class="fa-solid fa-bolt text-amber-400 mr-2"></i>Turnaround Time</span>
+                                <span class="font-semibold text-white">3 - 7 Days</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-400"><i class="fa-solid fa-message text-emerald-400 mr-2"></i>Direct Line</span>
+                                <span class="font-semibold text-white">Instant WhatsApp Response</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-400"><i class="fa-solid fa-code text-blue-400 mr-2"></i>Tech Stack</span>
+                                <span class="font-semibold text-white">Tailwind, JS, Salesforce, Vercel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEMO PROJECTS SECTION -->
+        <section id="work" class="py-24 max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-primary font-bold text-xs uppercase tracking-widest">Industry Demos</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mt-2">See What Your Site Could Look Like</h2>
+                <p class="text-slate-600 mt-3 text-sm">Interactive previews built specifically to demonstrate real conversion-focused design.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Demo 1: Plumbing -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div class="p-6">
+                        <span class="text-[10px] font-bold tracking-widest text-amber-600 uppercase bg-amber-50 px-2.5 py-1 rounded-full">Local Trades</span>
+                        <h3 class="font-heading font-bold text-xl text-slate-900 mt-3">Plumbing & Emergency Services</h3>
+                        <p class="text-slate-600 text-xs mt-2 leading-relaxed">Built for quick service dispatching and instant WhatsApp calls for urgent leads.</p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="https://local-plumbing-landing-page.vercel.app" target="_blank" class="block text-center w-full py-3 bg-slate-900 hover:bg-brand-primary text-white font-bold text-xs rounded-lg transition">
+                            Launch Live Preview ↗
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Demo 2: Salon -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div class="p-6">
+                        <span class="text-[10px] font-bold tracking-widest text-emerald-700 uppercase bg-emerald-50 px-2.5 py-1 rounded-full">Beauty & Spa</span>
+                        <h3 class="font-heading font-bold text-xl text-slate-900 mt-3">Aura Salon & Spa</h3>
+                        <p class="text-slate-600 text-xs mt-2 leading-relaxed">Luxury visual design, service price menus, and easy online appointment booking.</p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="https://salon-landing-page-demo.vercel.app" target="_blank" class="block text-center w-full py-3 bg-slate-900 hover:bg-brand-primary text-white font-bold text-xs rounded-lg transition">
+                            Launch Live Preview ↗
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Demo 3: Corporate -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div class="p-6">
+                        <span class="text-[10px] font-bold tracking-widest text-blue-700 uppercase bg-blue-50 px-2.5 py-1 rounded-full">Corporate Tier</span>
+                        <h3 class="font-heading font-bold text-xl text-slate-900 mt-3">Apex Advisory Consultancy</h3>
+                        <p class="text-slate-600 text-xs mt-2 leading-relaxed">Multi-page corporate site with SEO structure and detailed service packages.</p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="https://corporate-consultancy-demo.vercel.app" target="_blank" class="block text-center w-full py-3 bg-slate-900 hover:bg-brand-primary text-white font-bold text-xs rounded-lg transition">
+                            Launch Live Preview ↗
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-brand-dark text-slate-400 py-12 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <span class="font-heading font-bold text-lg text-white">Nolundi<span class="text-brand-accent">.dev</span></span>
+            <div class="flex space-x-6">
+                <a href="index.html" class="hover:text-white">Home</a>
+                <a href="services.html" class="hover:text-white">Services</a>
+                <a href="contact.html" class="hover:text-white">Contact</a>
+            </div>
+            <p>© 2026 Nolundi Mendi. Powered by Vercel.</p>
+        </div>
+    </footer>
+</body>
+</html>
