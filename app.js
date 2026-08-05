@@ -7,6 +7,8 @@ const expressLayouts = require('express-ejs-layouts');
 const site = require('./config/site');
 const pageRoutes = require('./routes/pages');
 const contactRoutes = require('./routes/contact');
+const chatRoutes = require('./routes/chat');
+const chat = require('./config/chat');
 
 const app = express();
 
@@ -31,6 +33,7 @@ app.use(
 // Available to every template without being passed per-route.
 app.use((req, res, next) => {
   res.locals.site = site;
+  res.locals.chat = chat;
   res.locals.currentPath = req.path;
   res.locals.activeNav = null;
   res.locals.canonical = site.baseUrl + req.path;
@@ -40,6 +43,7 @@ app.use((req, res, next) => {
 
 app.use('/', pageRoutes);
 app.use('/', contactRoutes);
+app.use('/', chatRoutes);
 
 // 404 — must be registered after all real routes.
 app.use((req, res) => {
