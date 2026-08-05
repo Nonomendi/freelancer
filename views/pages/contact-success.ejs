@@ -1,7 +1,7 @@
 <section class="py-24 px-4">
     <div class="max-w-xl mx-auto text-center">
         <div class="w-16 h-16 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-6 text-2xl" aria-hidden="true">
-            <i class="fa-solid fa-check"></i>
+            <%- include('../partials/icon', { name: 'check', cls: 'w-8 h-8' }) %>
         </div>
 
         <span class="text-brand-primary font-bold text-xs uppercase tracking-widest">Enquiry received</span>
@@ -20,7 +20,7 @@
             <a href="<%= site.whatsappLink('Hi Nolundi, I just submitted an enquiry on your site.') %>"
                target="_blank" rel="noopener"
                class="mt-4 inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-6 py-3 rounded-lg text-sm transition">
-                <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i> Chat on WhatsApp
+                <%- include('../partials/icon', { name: 'whatsapp', cls: 'w-5 h-5' }) %> Chat on WhatsApp
             </a>
         </div>
 

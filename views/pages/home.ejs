@@ -16,7 +16,7 @@
                     Request Clear Quote
                 </a>
                 <a href="<%= site.whatsappLink('Hi Nolundi, I have a project question.') %>" target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-7 py-3.5 rounded-lg text-sm transition flex items-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i> Chat on WhatsApp
+                    <%- include('../partials/icon', { name: 'whatsapp', cls: 'w-5 h-5' }) %> Chat on WhatsApp
                 </a>
             </div>
 
@@ -24,10 +24,10 @@
             <div class="pt-2">
                 <ul class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-slate-400">
                     <% if (site.trust.responseTime) { %>
-                        <li class="flex items-center gap-1.5"><i class="fa-solid fa-clock text-brand-accent" aria-hidden="true"></i><%= site.trust.responseTime %></li>
+                        <li class="flex items-center gap-1.5"><%- include('../partials/icon', { name: 'clock', cls: 'w-4 h-4 text-brand-accent' }) %><%= site.trust.responseTime %></li>
                     <% } %>
-                    <li class="flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-emerald-400" aria-hidden="true"></i><%= site.trust.noPayment %></li>
-                    <li class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-brand-accent" aria-hidden="true"></i><%= site.trust.location %></li>
+                    <li class="flex items-center gap-1.5"><%- include('../partials/icon', { name: 'shield-halved', cls: 'w-4 h-4 text-emerald-400' }) %><%= site.trust.noPayment %></li>
+                    <li class="flex items-center gap-1.5"><%- include('../partials/icon', { name: 'location-dot', cls: 'w-4 h-4 text-brand-accent' }) %><%= site.trust.location %></li>
                 </ul>
             </div>
         </div>
@@ -58,10 +58,10 @@
 
                 <h3 class="text-[11px] uppercase font-bold text-slate-400 tracking-widest mb-4">Certifications</h3>
                 <ul class="grid grid-cols-2 gap-3 text-sm text-slate-300">
-                    <li class="flex items-center gap-2"><i class="fa-brands fa-microsoft text-blue-400" aria-hidden="true"></i> Azure Fundamentals</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-cloud text-sky-400" aria-hidden="true"></i> Agentforce Certified</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-code text-emerald-400" aria-hidden="true"></i> WeThinkCode_ Trained</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-arrows-spin text-purple-400" aria-hidden="true"></i> Flowgear Certified</li>
+                    <li class="flex items-center gap-2"><%- include('../partials/icon', { name: 'microsoft', cls: 'w-4 h-4 text-blue-400' }) %> Azure Fundamentals</li>
+                    <li class="flex items-center gap-2"><%- include('../partials/icon', { name: 'cloud', cls: 'w-4 h-4 text-sky-400' }) %> Agentforce Certified</li>
+                    <li class="flex items-center gap-2"><%- include('../partials/icon', { name: 'code', cls: 'w-4 h-4 text-emerald-400' }) %> WeThinkCode_ Trained</li>
+                    <li class="flex items-center gap-2"><%- include('../partials/icon', { name: 'arrows-spin', cls: 'w-4 h-4 text-purple-400' }) %> Flowgear Certified</li>
                 </ul>
             </div>
         </div>
@@ -83,9 +83,9 @@
                  data-reveal>
                 <div>
                     <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-2xl <%= isDark ? 'bg-brand-primary text-white shadow-lg' : (group.accent === 'accent' ? 'bg-sky-100 text-brand-accent shadow-inner' : 'bg-blue-100 text-brand-primary shadow-inner') %>" aria-hidden="true">
-                        <% if (group.icon === 'laptop-code') { %><i class="fa-solid fa-laptop-code"></i>
-                        <% } else if (group.icon === 'mobile-screen') { %><i class="fa-solid fa-mobile-screen-button"></i>
-                        <% } else { %><i class="fa-brands fa-salesforce"></i><% } %>
+                        <% if (group.icon === 'laptop-code') { %><%- include('../partials/icon', { name: 'laptop-code', cls: 'w-7 h-7' }) %>
+                        <% } else if (group.icon === 'mobile-screen') { %><%- include('../partials/icon', { name: 'mobile-screen', cls: 'w-7 h-7' }) %>
+                        <% } else { %><%- include('../partials/icon', { name: 'salesforce', cls: 'w-7 h-7' }) %><% } %>
                     </div>
 
                     <h3 class="font-heading font-bold text-2xl <%= isDark ? 'text-white' : 'text-slate-900' %> mb-6 border-l-4 <%= group.accent === 'accent' ? 'border-brand-accent' : 'border-brand-primary' %> pl-4"><%= group.title %></h3>
@@ -128,7 +128,7 @@
             <% steps.forEach(function (step) { %>
                 <li class="bg-white p-7 rounded-2xl border border-slate-200 text-center shadow-sm hover:shadow-md transition" data-reveal>
                     <div class="w-10 h-10 <%= step.step === 'launch' ? 'bg-emerald-600' : 'bg-brand-primary' %> text-white rounded-full flex items-center justify-center font-bold mx-auto mb-4 text-sm" aria-hidden="true">
-                        <% if (step.step === 'launch') { %><i class="fa-solid fa-rocket text-xs"></i><% } else { %><%= step.step %><% } %>
+                        <% if (step.step === 'launch') { %><%- include('../partials/icon', { name: 'rocket', cls: 'w-4 h-4' }) %><% } else { %><%= step.step %><% } %>
                     </div>
                     <h3 class="font-heading font-bold text-base text-slate-900 mb-2"><%= step.title %></h3>
                     <p class="text-slate-600 text-sm leading-relaxed"><%= step.body %></p>

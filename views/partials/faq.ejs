@@ -12,7 +12,7 @@
                     <summary class="flex items-center justify-between gap-4 cursor-pointer list-none py-5 text-left">
                         <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 group-hover:text-brand-primary transition"><%= item.q %></h3>
                         <span class="shrink-0 w-8 h-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center group-open:bg-brand-primary group-open:text-white transition" aria-hidden="true">
-                            <i class="fa-solid fa-chevron-down text-xs transition-transform group-open:rotate-180"></i>
+                            <%- include('../partials/icon', { name: 'chevron-down', cls: 'w-3.5 h-3.5 transition-transform group-open:rotate-180' }) %>
                         </span>
                     </summary>
                     <p class="text-slate-600 leading-relaxed pb-6 pr-12"><%= item.a %></p>
@@ -29,7 +29,7 @@
                 <a href="<%= site.whatsappLink('Hi Nolundi, I have a question about your services.') %>"
                    target="_blank" rel="noopener"
                    class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-7 py-3.5 rounded-lg text-sm transition inline-flex items-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i> WhatsApp Me
+                    <%- include('../partials/icon', { name: 'whatsapp', cls: 'w-5 h-5' }) %> WhatsApp Me
                 </a>
             </div>
             <div class="mt-6 flex justify-center">

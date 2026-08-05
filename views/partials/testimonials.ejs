@@ -9,7 +9,7 @@
                      views the site before real quotes are added. This is meant
                      to be impossible to miss. -->
                 <p class="mt-5 inline-flex items-start gap-2 text-left text-sm bg-amber-50 border border-amber-300 text-amber-900 rounded-xl px-4 py-3">
-                    <i class="fa-solid fa-triangle-exclamation mt-0.5" aria-hidden="true"></i>
+                    <%- include('../partials/icon', { name: 'triangle-exclamation', cls: 'w-4 h-4 mt-0.5' }) %>
                     <span><strong>Placeholder section.</strong> These are not real quotes from real clients. Replace them in <code class="font-mono text-xs">config/content.js</code>, or delete this section, before the site goes live.</span>
                 </p>
             <% } else { %>
@@ -23,11 +23,11 @@
                         data-reveal>
                     <div>
                         <div class="flex gap-0.5 <%= t.placeholder ? 'text-slate-300' : 'text-amber-400' %> mb-4" aria-hidden="true">
-                            <i class="fa-solid fa-star text-xs"></i>
-                            <i class="fa-solid fa-star text-xs"></i>
-                            <i class="fa-solid fa-star text-xs"></i>
-                            <i class="fa-solid fa-star text-xs"></i>
-                            <i class="fa-solid fa-star text-xs"></i>
+                            <%- include('../partials/icon', { name: 'star', cls: 'w-3.5 h-3.5' }) %>
+                            <%- include('../partials/icon', { name: 'star', cls: 'w-3.5 h-3.5' }) %>
+                            <%- include('../partials/icon', { name: 'star', cls: 'w-3.5 h-3.5' }) %>
+                            <%- include('../partials/icon', { name: 'star', cls: 'w-3.5 h-3.5' }) %>
+                            <%- include('../partials/icon', { name: 'star', cls: 'w-3.5 h-3.5' }) %>
                         </div>
                         <blockquote class="<%= t.placeholder ? 'text-slate-400 italic' : 'text-slate-700' %> leading-relaxed">
                             <%= t.placeholder ? t.quote : '“' + t.quote + '”' %>

@@ -24,7 +24,7 @@
                 <a href="<%= site.whatsappLink("Hi Nolundi, I'd like to discuss a new website project.") %>"
                    target="_blank" rel="noopener"
                    class="flex items-center space-x-4 p-4 bg-emerald-50 border border-emerald-200 rounded-xl hover:bg-emerald-100 transition">
-                    <i class="fa-brands fa-whatsapp text-emerald-600 text-3xl" aria-hidden="true"></i>
+                    <%- include('../partials/icon', { name: 'whatsapp', cls: 'w-8 h-8 text-emerald-600' }) %>
                     <div>
                         <p class="text-sm font-bold text-slate-900">Direct WhatsApp</p>
                         <p class="text-sm text-slate-600"><%= site.whatsappDisplay %> — click to start an immediate chat</p>
@@ -33,7 +33,7 @@
 
                 <!-- Direct Email Card -->
                 <a href="<%= site.emailLink %>" class="flex items-center space-x-4 p-4 bg-white border border-slate-200 rounded-xl hover:border-brand-primary transition shadow-sm">
-                    <i class="fa-solid fa-envelope text-brand-primary text-2xl" aria-hidden="true"></i>
+                    <%- include('../partials/icon', { name: 'envelope', cls: 'w-7 h-7 text-brand-primary' }) %>
                     <div>
                         <p class="text-sm font-bold text-slate-900">Direct Email</p>
                         <p class="text-sm text-brand-primary font-medium"><%= site.email %></p>
@@ -56,7 +56,7 @@
                    href="<%= site.whatsappLink("Hi Nolundi, the contact form on your site didn't go through. Here are my project details:") %>"
                    target="_blank" rel="noopener"
                    class="mt-2 inline-flex items-center gap-2 text-sm font-bold text-emerald-700 underline hover:text-emerald-800">
-                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Send it on WhatsApp instead
+                    <%- include('../partials/icon', { name: 'whatsapp', cls: 'w-4 h-4' }) %> Send it on WhatsApp instead
                 </a>
             </div>
 
@@ -148,10 +148,10 @@
                 <button type="submit" id="quoteSubmit"
                         class="w-full bg-brand-primary hover:bg-blue-700 disabled:bg-slate-400 disabled:cursor-not-allowed text-white font-bold py-3.5 rounded-lg shadow text-xs tracking-wider uppercase transition flex items-center justify-center gap-2">
                     <span id="quoteSubmitIdle" class="flex items-center gap-2">
-                        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Enquiry
+                        <%- include('../partials/icon', { name: 'paper-plane', cls: 'w-4 h-4' }) %> Send Enquiry
                     </span>
                     <span id="quoteSubmitBusy" class="hidden items-center gap-2">
-                        <i class="fa-solid fa-circle-notch fa-spin" aria-hidden="true"></i> Sending…
+                        <%- include('../partials/icon', { name: 'circle-notch', cls: 'w-4 h-4 animate-spin motion-reduce:animate-none' }) %> Sending…
                     </span>
                 </button>
 

@@ -6,17 +6,17 @@
 
   var toggle = document.getElementById('navToggle');
   var panel = document.getElementById('mobileNav');
-  var icon = document.getElementById('navToggleIcon');
+  // Two inline SVGs; show one, hide the other.
+  var iconClosed = toggle && toggle.querySelector('[data-nav-icon="closed"]');
+  var iconOpen = toggle && toggle.querySelector('[data-nav-icon="open"]');
 
   if (!toggle || !panel) return;
 
   function setOpen(open) {
     panel.classList.toggle('hidden', !open);
     toggle.setAttribute('aria-expanded', String(open));
-    if (icon) {
-      icon.classList.toggle('fa-bars', !open);
-      icon.classList.toggle('fa-xmark', open);
-    }
+    if (iconClosed) iconClosed.classList.toggle('hidden', open);
+    if (iconOpen) iconOpen.classList.toggle('hidden', !open);
   }
 
   toggle.addEventListener('click', function () {
