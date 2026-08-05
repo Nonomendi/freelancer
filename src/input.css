@@ -31,6 +31,44 @@
 }
 
 @layer components {
+  /* Scroll reveal.
+     The hidden state is applied by JS (adding .reveal-ready) rather than
+     living in the markup, so with JS disabled — or before the script runs —
+     content is simply visible. Nothing is ever hidden with no way back. */
+  .reveal-ready [data-reveal] {
+    opacity: 0;
+  }
+
+  /* An animation rather than a transition on purpose. Most of these cards
+     already carry Tailwind's `transition` class for their hover states; a
+     competing `transition` declaration here would override it and kill the
+     hover animation. Keyframes do not interfere. */
+  .reveal-ready [data-reveal].is-visible {
+    animation: reveal-in 0.5s ease-out forwards;
+  }
+
+  @keyframes reveal-in {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* Reduced motion: content still appears, it just does not travel.
+     (reveal.js also bails out entirely — this is the belt to that braces.) */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-ready [data-reveal],
+    .reveal-ready [data-reveal].is-visible {
+      opacity: 1;
+      animation: none;
+      transform: none;
+    }
+  }
+
   /* Skip link: hidden until focused, then pinned to the top-left. */
   .skip-link {
     @apply sr-only;

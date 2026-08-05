@@ -8,6 +8,7 @@ const site = require('./config/site');
 const pageRoutes = require('./routes/pages');
 const contactRoutes = require('./routes/contact');
 const chatRoutes = require('./routes/chat');
+const seoRoutes = require('./routes/seo');
 const chat = require('./config/chat');
 
 const app = express();
@@ -26,7 +27,12 @@ app.use(express.json({ limit: '32kb' }));
 
 app.use(
   express.static(path.join(__dirname, 'public'), {
-    maxAge: process.env.NODE_ENV === 'production' ? '7d' : 0
+    maxAge: process.env.NODE_ENV === 'production' ? '7d' : 0,
+    setHeaders(res, filePath) {
+      // Express's bundled MIME table predates AVIF and serves it as
+      // application/octet-stream, which some browsers refuse to decode.
+      if (filePath.endsWith('.avif')) res.type('image/avif');
+    }
   })
 );
 
@@ -44,6 +50,7 @@ app.use((req, res, next) => {
 app.use('/', pageRoutes);
 app.use('/', contactRoutes);
 app.use('/', chatRoutes);
+app.use('/', seoRoutes);
 
 // 404 — must be registered after all real routes.
 app.use((req, res) => {

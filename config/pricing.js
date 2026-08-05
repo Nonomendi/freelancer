@@ -158,9 +158,20 @@ const process = [
 /**
  * Portfolio demos.
  *
- * TODO(nolundi): the `url` values below are hashed Vercel *deployment*
- * previews — they contain a build hash (e.g. -f0ssd96he-) and break on every
- * redeploy. Replace each with the stable production URL for that project.
+ * TODO(nolundi): TWO problems with the `url` values below.
+ *
+ * 1. They are hashed Vercel *deployment* previews (note the -f0ssd96he-
+ *    build hash) and break on every redeploy.
+ *
+ * 2. More urgently: all three are behind Vercel Deployment Protection.
+ *    Checked August 2026 — each one redirects to vercel.com/login, so a
+ *    visitor clicking "Launch Live Preview" is asked to sign in to Vercel.
+ *    Fix in each project: Settings > Deployment Protection > set Vercel
+ *    Authentication to Disabled (or Standard Protection, which leaves
+ *    production public and only guards previews).
+ *
+ * `preview` is a placeholder graphic until real screenshots exist — which
+ * cannot be captured while the demos are behind the login wall.
  */
 const portfolio = [
   {
@@ -171,7 +182,9 @@ const portfolio = [
     blurb:
       'Built for quick service dispatching, customer reviews, and urgent lead capture.',
     url: 'https://local-plumbing-landing-page-f0ssd96he-nonomendis-projects.vercel.app/#testimonials',
-    urlIsStable: false
+    urlIsStable: false,
+    preview: '/img/preview-plumbing.svg',
+    previewIsPlaceholder: true
   },
   {
     id: 'salon',
@@ -181,7 +194,9 @@ const portfolio = [
     blurb:
       'Luxury visual design, service price menus, and easy online appointment booking.',
     url: 'https://salon-landing-page-demo-ayw58w4yr-nonomendis-projects.vercel.app/index.html',
-    urlIsStable: false
+    urlIsStable: false,
+    preview: '/img/preview-salon.svg',
+    previewIsPlaceholder: true
   },
   {
     id: 'corporate',
@@ -191,7 +206,9 @@ const portfolio = [
     blurb:
       'Multi-page corporate site with consultation contact forms and structured services.',
     url: 'https://corporate-consultancy-demo-obw6on1cg-nonomendis-projects.vercel.app/contact',
-    urlIsStable: false
+    urlIsStable: false,
+    preview: '/img/preview-corporate.svg',
+    previewIsPlaceholder: true
   }
 ];
 

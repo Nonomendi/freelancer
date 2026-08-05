@@ -1,6 +1,7 @@
 const express = require('express');
 const site = require('../config/site');
 const { serviceGroups, tiers, process: steps, portfolio, findTier } = require('../config/pricing');
+const { faqs, testimonials, testimonialsArePlaceholder } = require('../config/content');
 
 const router = express.Router();
 
@@ -33,7 +34,10 @@ router.get('/', (req, res) => {
     activeNav: 'home',
     serviceGroups,
     steps,
-    portfolio
+    portfolio,
+    faqs,
+    testimonials,
+    testimonialsArePlaceholder
   });
 });
 
