@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Visible focus for keyboard users on every interactive element.
+     Accessibility requirement — do not remove without a replacement. */
+  :focus-visible {
+    outline: 2px solid theme('colors.brand.accent');
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Anchor links land below the sticky 5rem header instead of under it. */
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+}
+
+@layer components {
+  /* Skip link: hidden until focused, then pinned to the top-left. */
+  .skip-link {
+    @apply sr-only;
+  }
+
+  .skip-link:focus {
+    @apply not-sr-only fixed top-3 left-3 z-[100] rounded-lg bg-white px-4 py-2 text-sm font-semibold text-brand-dark shadow-lg;
+  }
+}
