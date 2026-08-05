@@ -6,6 +6,7 @@ const expressLayouts = require('express-ejs-layouts');
 
 const site = require('./config/site');
 const pageRoutes = require('./routes/pages');
+const contactRoutes = require('./routes/contact');
 
 const app = express();
 
@@ -38,6 +39,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/', pageRoutes);
+app.use('/', contactRoutes);
 
 // 404 — must be registered after all real routes.
 app.use((req, res) => {

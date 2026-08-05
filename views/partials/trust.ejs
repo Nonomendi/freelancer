@@ -1,0 +1,13 @@
+<ul class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-slate-600">
+    <% if (site.trust.responseTime) { %>
+        <li class="flex items-center gap-1.5">
+            <i class="fa-solid fa-clock text-brand-primary" aria-hidden="true"></i><%= site.trust.responseTime %>
+        </li>
+    <% } %>
+    <li class="flex items-center gap-1.5">
+        <i class="fa-solid fa-shield-halved text-emerald-600" aria-hidden="true"></i><%= site.trust.noPayment %>
+    </li>
+    <li class="flex items-center gap-1.5">
+        <i class="fa-solid fa-location-dot text-brand-accent" aria-hidden="true"></i><%= site.trust.location %>
+    </li>
+</ul>

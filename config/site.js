@@ -40,6 +40,21 @@ module.exports = {
   // Open Graph tags all derive from this one value.
   baseUrl: (process.env.BASE_URL || 'http://localhost:3000').replace(/\/$/, ''),
 
+  /**
+   * Trust signals rendered next to the calls to action.
+   *
+   * TODO(nolundi): `responseTime` is intentionally null — I will not put a
+   * response time on the site that you have not agreed to. Set it to a
+   * string you can actually hold to (e.g. 'Replies within one business
+   * day') and it appears next to every CTA. Leave it null and the line is
+   * simply not rendered.
+   */
+  trust: {
+    responseTime: null,
+    noPayment: 'No payment until you approve the quote',
+    location: 'Based in Johannesburg'
+  },
+
   certifications: [
     { label: 'Azure Fundamentals', icon: 'microsoft', colour: 'text-blue-400' },
     { label: 'Agentforce Certified', icon: 'cloud', colour: 'text-sky-400' },
