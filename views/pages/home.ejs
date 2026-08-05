@@ -1,0 +1,148 @@
+<!-- HERO SECTION -->
+<section class="bg-brand-dark text-white py-20 lg:py-28 px-4 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+            <span class="inline-block bg-blue-900/50 text-blue-300 border border-blue-700/50 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider">
+                Full Stack &amp; Salesforce Freelance Developer
+            </span>
+            <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+                I build real products with care &amp; craft.
+            </h1>
+            <p class="text-slate-300 text-base sm:text-lg font-light max-w-2xl">
+                Based in Johannesburg, trained via WeThinkCode_. Get dedicated, direct attention on your project across the stack—React, Angular, Java, Python, and Salesforce customization (Apex, LWC).
+            </p>
+            <div class="pt-4 flex flex-wrap gap-4">
+                <a href="/contact" class="bg-brand-primary hover:bg-blue-600 text-white font-bold px-7 py-3.5 rounded-lg shadow-lg text-sm transition flex items-center gap-2">
+                    Request Clear Quote
+                </a>
+                <a href="<%= site.whatsappLink('Hi Nolundi, I have a project question.') %>" target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-7 py-3.5 rounded-lg text-sm transition flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <!-- Profile Badge with Image -->
+        <div class="lg:col-span-5">
+            <div class="bg-brand-navy p-8 rounded-2xl border border-slate-700 shadow-2xl relative">
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="relative">
+                        <img src="/img/profile.jpg"
+                             alt="<%= site.name %>"
+                             width="64" height="64"
+                             class="w-16 h-16 rounded-full object-cover border-2 border-brand-accent shadow-md">
+                        <span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-emerald-500 border-2 border-brand-navy rounded-full" aria-hidden="true"></span>
+                    </div>
+                    <div>
+                        <h2 class="font-heading font-bold text-lg text-white"><%= site.name %></h2>
+                        <p class="text-xs text-brand-accent"><%= site.role %></p>
+                    </div>
+                </div>
+
+                <h3 class="text-[10px] uppercase font-bold text-slate-400 tracking-widest mb-3">Certifications</h3>
+                <ul class="grid grid-cols-2 gap-3 text-xs text-slate-300">
+                    <li class="flex items-center gap-1.5"><i class="fa-brands fa-microsoft text-blue-400" aria-hidden="true"></i> Azure Fundamentals</li>
+                    <li class="flex items-center gap-1.5"><i class="fa-solid fa-cloud text-sky-400" aria-hidden="true"></i> Agentforce Certified</li>
+                    <li class="flex items-center gap-1.5"><i class="fa-solid fa-code text-emerald-400" aria-hidden="true"></i> WeThinkCode_ Trained</li>
+                    <li class="flex items-center gap-1.5"><i class="fa-solid fa-arrows-spin text-purple-400" aria-hidden="true"></i> Flowgear Certified</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section id="services" class="py-24 max-w-7xl mx-auto px-4">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-brand-primary font-bold text-xs uppercase tracking-widest">Services Offered</span>
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Crafted With Care</h2>
+        <p class="text-slate-600 mt-3 text-sm">Clear pricing ranges based on project scope, with dedicated focus from Johannesburg.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <% serviceGroups.forEach(function (group) { %>
+            <% var isDark = group.theme === 'dark'; %>
+            <div class="<%= isDark ? 'bg-brand-navy border-slate-700 text-slate-100' : 'bg-white border-slate-200' %> p-8 rounded-2xl border shadow-sm hover:shadow-xl transition flex flex-col justify-between">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-2xl <%= isDark ? 'bg-brand-primary text-white shadow-lg' : (group.accent === 'accent' ? 'bg-sky-100 text-brand-accent shadow-inner' : 'bg-blue-100 text-brand-primary shadow-inner') %>" aria-hidden="true">
+                        <% if (group.icon === 'laptop-code') { %><i class="fa-solid fa-laptop-code"></i>
+                        <% } else if (group.icon === 'mobile-screen') { %><i class="fa-solid fa-mobile-screen-button"></i>
+                        <% } else { %><i class="fa-brands fa-salesforce"></i><% } %>
+                    </div>
+
+                    <h3 class="font-heading font-bold text-2xl <%= isDark ? 'text-white' : 'text-slate-900' %> mb-6 border-l-4 <%= group.accent === 'accent' ? 'border-brand-accent' : 'border-brand-primary' %> pl-4"><%= group.title %></h3>
+
+                    <div class="space-y-4 text-sm <%= isDark ? 'text-slate-200' : 'text-slate-700' %>">
+                        <% group.items.forEach(function (item, i) { %>
+                            <div class="flex justify-between items-start gap-3 <%= i > 0 ? (isDark ? 'border-t border-slate-700 pt-4' : 'border-t border-slate-100 pt-4') : '' %>">
+                                <div>
+                                    <p class="font-semibold <%= isDark ? 'text-white' : 'text-slate-900' %>"><%= item.name %></p>
+                                    <% if (item.blurb) { %>
+                                        <p class="text-xs <%= isDark ? 'text-slate-400' : 'text-slate-600' %>"><%= item.blurb %></p>
+                                    <% } %>
+                                </div>
+                                <p class="font-bold <%= group.accent === 'accent' ? 'text-brand-accent' : 'text-brand-primary' %> text-xs whitespace-nowrap"><%= item.price %></p>
+                            </div>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+    <div class="text-center mt-12">
+        <a href="/services" class="inline-block px-8 py-3 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-lg text-sm transition">
+            View Full Services &amp; Maintenance Tiers
+        </a>
+    </div>
+</section>
+
+<!-- HOW IT WORKS SECTION -->
+<section id="how-it-works" class="py-24 bg-brand-light border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-brand-primary font-bold text-xs uppercase tracking-widest">Process</span>
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Simple &amp; Straightforward</h2>
+            <p class="text-slate-600 mt-3 text-sm">Clear collaboration from concept to launch.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <% steps.forEach(function (step) { %>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 text-center shadow-sm relative">
+                    <div class="w-10 h-10 <%= step.step === 'launch' ? 'bg-emerald-600' : 'bg-brand-primary' %> text-white rounded-full flex items-center justify-center font-bold mx-auto mb-4 text-sm" aria-hidden="true">
+                        <% if (step.step === 'launch') { %><i class="fa-solid fa-rocket text-xs"></i><% } else { %><%= step.step %><% } %>
+                    </div>
+                    <h3 class="font-heading font-bold text-base text-slate-900 mb-2"><%= step.title %></h3>
+                    <p class="text-slate-600 text-xs leading-relaxed"><%= step.body %></p>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</section>
+
+<!-- PORTFOLIO / DEMO PROJECTS SECTION -->
+<section id="work" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-brand-primary font-bold text-xs uppercase tracking-widest">Live Demos</span>
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mt-2">See What Your Site Could Look Like</h2>
+            <p class="text-slate-600 mt-3 text-sm">Interactive previews built specifically to demonstrate real conversion-focused design.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <% portfolio.forEach(function (demo) { %>
+                <div class="bg-brand-light rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div class="p-6">
+                        <span class="text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full <%= demo.categoryClass %>"><%= demo.category %></span>
+                        <h3 class="font-heading font-bold text-xl text-slate-900 mt-3"><%= demo.title %></h3>
+                        <p class="text-slate-600 text-xs mt-2 leading-relaxed"><%= demo.blurb %></p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="<%= demo.url %>" target="_blank" rel="noopener" class="block text-center w-full py-3 bg-slate-900 hover:bg-brand-primary text-white font-bold text-xs rounded-lg transition">
+                            Launch Live Preview <span aria-hidden="true">&#8599;</span><span class="sr-only">(opens in a new tab)</span>
+                        </a>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</section>

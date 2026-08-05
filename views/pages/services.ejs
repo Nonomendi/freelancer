@@ -1,0 +1,33 @@
+<section class="bg-brand-dark text-white py-16 px-4">
+    <div class="max-w-7xl mx-auto text-center">
+        <h1 class="font-heading text-4xl font-extrabold">Service Tiers &amp; Development Packages</h1>
+        <p class="text-slate-300 mt-3 text-base max-w-xl mx-auto">Clear packages designed for local small businesses, growing companies, and Salesforce projects.</p>
+    </div>
+</section>
+
+<!-- PACKAGES GRID -->
+<section class="py-20 max-w-7xl mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <% tiers.forEach(function (tier) { %>
+            <div class="bg-white rounded-2xl p-8 flex flex-col justify-between <%= tier.featured ? 'border-2 border-brand-primary shadow-xl relative' : 'border border-slate-200 shadow-sm hover:shadow-md transition' %>">
+                <% if (tier.badge) { %>
+                    <span class="absolute -top-3 right-6 bg-brand-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider"><%= tier.badge %></span>
+                <% } %>
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider <%= tier.featured ? 'text-brand-accent' : 'text-brand-primary' %>"><%= tier.number %></span>
+                    <h2 class="font-heading text-2xl font-bold text-slate-900 mt-2"><%= tier.name %></h2>
+                    <p class="text-slate-600 text-sm mt-3"><%= tier.description %></p>
+                    <ul class="mt-6 space-y-3 text-xs text-slate-700 border-t border-slate-100 pt-6">
+                        <% tier.features.forEach(function (feature) { %>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600" aria-hidden="true"></i> <%= feature %></li>
+                        <% }); %>
+                    </ul>
+                </div>
+                <div class="mt-8 pt-6 border-t border-slate-100">
+                    <a href="/contact?tier=<%= tier.slug %>"
+                       class="block text-center w-full text-white font-bold py-3 rounded-lg text-xs transition <%= tier.featured ? 'bg-brand-primary hover:bg-blue-700' : 'bg-slate-900 hover:bg-brand-primary' %>">Select <%= tier.number %></a>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</section>
